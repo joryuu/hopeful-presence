@@ -13,13 +13,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Serif+Display:wght@900&display=swap" rel="stylesheet">
 
     <style>
-        /* Note: Elika Gorica is a commercial font. For production use, purchase and host the font files.
-           Using Playfair Display as a similar elegant serif alternative from Google Fonts. */
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
-
         :root {
             --primary-color: #001151;
             --secondary-color: #1a2b6b;
@@ -35,11 +31,17 @@
             color: #333;
         }
 
-        /* Headers use elegant serif font */
+        /* Max width constraint */
+        .container {
+            max-width: 1200px;
+        }
+
+        /* Headers use Noto Serif Display Black */
         h1, h2, h3, h4, h5, h6,
         .navbar-brand,
         .section-headline {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'Noto Serif Display', Georgia, serif;
+            font-weight: 900;
         }
 
         /* Navigation */
@@ -556,7 +558,7 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-start">
                 <div class="col-lg-7 hero-content">
                     <h1>Close Deals Faster With Marketing That Converts</h1>
                     <p class="lead">CRE brokers and investors use my marketing to lease properties 7.5x faster, raise capital, and generate millions in commissions. From offering memorandums to investor decks, I transform property data into institutional-quality materials that accelerate decisions.</p>
@@ -610,7 +612,7 @@
     <!-- Case Study 1: Contra Costa Logistics Center -->
     <section class="case-study" id="results">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-start">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <div class="case-study-image">
                         <div class="text-center">
@@ -649,7 +651,7 @@
     <!-- Case Study 2: Martinez What's Next -->
     <section class="case-study">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-start">
                 <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
                     <div class="case-study-image">
                         <div class="text-center">
