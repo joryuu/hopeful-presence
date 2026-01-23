@@ -13,7 +13,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Bodoni+Moda:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Instrument+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -36,12 +36,12 @@
             max-width: 1200px;
         }
 
-        /* Headers use Bodoni Moda */
+        /* Headers use Instrument Serif */
         h1, h2,
         .navbar-brand,
         .section-headline {
-            font-family: 'Bodoni Moda', Georgia, serif;
-            font-weight: 700;
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-weight: 600;
             letter-spacing: -1.5px;
         }
 
@@ -78,9 +78,13 @@
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            background: linear-gradient(135deg, rgba(0, 1, 81, 0.85) 0%, rgba(26, 43, 107, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat;
             color: white;
-            padding: 120px 0 100px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
             overflow: hidden;
         }
@@ -152,17 +156,6 @@
             border-color: white;
         }
 
-        .hero-image-placeholder {
-            background: rgba(255,255,255,0.1);
-            border: 2px dashed rgba(255,255,255,0.3);
-            border-radius: 10px;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255,255,255,0.6);
-            font-size: 1.2rem;
-        }
 
         /* Results Bar */
         .results-bar {
@@ -566,21 +559,15 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section">
+    <section class="hero-section" loading="lazy">
         <div class="container">
-            <div class="row align-items-start">
-                <div class="col-lg-7 hero-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 hero-content text-center">
                     <h1>Close Deals Faster With Marketing That Converts</h1>
                     <p class="lead">CRE brokers and investors use my marketing to lease properties 7.5x faster, raise capital, and generate millions in commissions. From offering memorandums to investor decks, I transform property data into institutional-quality materials that accelerate decisions.</p>
-                    <div class="d-flex gap-3 flex-wrap">
+                    <div class="d-flex gap-3 flex-wrap justify-content-center">
                         <a href="#contact" class="btn btn-hero-primary">Start Your Project</a>
                         <a href="#results" class="btn btn-hero-secondary">See Results</a>
-                    </div>
-                </div>
-                <div class="col-lg-5 mt-5 mt-lg-0">
-                    <div class="hero-image-placeholder">
-                        <i class="bi bi-image" style="font-size: 4rem;"></i>
-                        <span class="ms-3">Hero Image</span>
                     </div>
                 </div>
             </div>
@@ -588,7 +575,7 @@
     </section>
 
     <!-- Results Snapshot Bar -->
-    <section class="results-bar">
+    <section class="results-bar" loading="lazy">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
@@ -620,7 +607,7 @@
     </section>
 
     <!-- Case Study 1: Contra Costa Logistics Center -->
-    <section class="case-study" id="results">
+    <section class="case-study" id="results" loading="lazy">
         <div class="container">
             <div class="row align-items-start">
                 <div class="col-lg-6 mb-4 mb-lg-0">
@@ -659,7 +646,7 @@
     </section>
 
     <!-- Case Study 2: Martinez What's Next -->
-    <section class="case-study">
+    <section class="case-study" loading="lazy">
         <div class="container">
             <div class="row align-items-start">
                 <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
@@ -698,7 +685,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
+    <section class="testimonials" loading="lazy">
         <div class="container">
             <h2 class="section-headline">What Happens When You Work With Me</h2>
 
@@ -729,7 +716,7 @@
     </section>
 
     <!-- About/Expertise Section -->
-    <section class="about-section">
+    <section class="about-section" loading="lazy">
         <div class="container">
             <h2 class="section-headline">Marketing That Drives Measurable Results</h2>
 
@@ -784,7 +771,7 @@
     </section>
 
     <!-- How It Works Section -->
-    <section class="how-it-works" id="process">
+    <section class="how-it-works" id="process" loading="lazy">
         <div class="container">
             <h2 class="section-headline">From Intake to Impact: My Process</h2>
 
@@ -830,7 +817,7 @@
     </section>
 
     <!-- Final CTA Section -->
-    <section class="final-cta" id="contact">
+    <section class="final-cta" id="contact" loading="lazy">
         <div class="container">
             <h2>Ready to Accelerate Your Next Transaction?</h2>
             <p class="lead">Whether you're raising capital, leasing space, or closing a sale, let's create marketing materials that drive results.</p>
