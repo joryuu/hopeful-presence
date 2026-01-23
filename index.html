@@ -63,21 +63,23 @@
         /* h3 and below use Poppins with accent color */
         h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
-            font-weight: 400;
+            font-weight: 600;
             color: #B89946;
         }
 
         /* Navigation */
         .navbar {
             background-color: transparent !important;
-            box-shadow: none;
+            background: transparent !important;
+            box-shadow: none !important;
             padding: 1rem 0;
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .navbar.scrolled {
             background-color: var(--light-bg) !important;
-            box-shadow: 0 2px 8px rgba(0,1,81,0.15);
+            background: var(--light-bg) !important;
+            box-shadow: 0 2px 8px rgba(0,1,81,0.15) !important;
         }
 
         .navbar-brand {
@@ -229,7 +231,7 @@
 
         .case-study h3 {
             font-size: 1.35rem;
-            font-weight: 400;
+            font-weight: 600;
             color: #B89946;
             margin-top: 1.5rem;
             margin-bottom: 0.75rem;
@@ -305,7 +307,15 @@
         /* Testimonials */
         .testimonials {
             padding: 80px 0;
-            background-color: white;
+            background-color: var(--primary-color);
+        }
+
+        .testimonials .section-headline {
+            color: white;
+        }
+
+        .testimonials .testimonial-card {
+            background: rgba(255, 255, 255, 0.95);
         }
 
         .section-headline {
@@ -359,7 +369,7 @@
         /* About/Expertise */
         .about-section {
             padding: 80px 0;
-            background-color: var(--light-bg);
+            background-color: white;
         }
 
         .results-grid {
@@ -477,7 +487,8 @@
             color: var(--dark-bg);
             border-radius: 50%;
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 400;
+            font-family: 'Gloock', Georgia, serif;
             margin-bottom: 20px;
             position: relative;
             z-index: 2;
@@ -486,10 +497,10 @@
 
         .process-step h4 {
             color: var(--primary-color);
-            font-weight: 700;
+            font-weight: 400;
             font-size: 1.2rem;
             margin-bottom: 12px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Gloock', Georgia, serif;
         }
 
         .process-step p {
@@ -497,6 +508,27 @@
             margin: 0;
             font-size: 0.95rem;
             line-height: 1.5;
+        }
+
+        /* Background Image Section */
+        .background-image-section {
+            min-height: 400px;
+            background: linear-gradient(135deg, rgba(0, 1, 81, 0.85) 0%, rgba(26, 43, 107, 0.85) 100%),
+                        url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=2000') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .background-image-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 1, 81, 0.28);
         }
 
         /* Pricing Section */
@@ -1014,6 +1046,16 @@
             <div class="text-center mt-5">
                 <p style="font-size: 1.1rem; color: #555;"><strong>Timeline:</strong> Most projects deliver within 5-10 business days depending on scope and complexity. Rush timelines available for urgent transactions.</p>
                 <a href="#contact" class="btn btn-hero-primary mt-3">Start a Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Background Image Section -->
+    <section class="background-image-section">
+        <div class="container">
+            <div class="text-center" style="position: relative; z-index: 1; color: white;">
+                <i class="bi bi-image" style="font-size: 4rem; opacity: 0.5;"></i>
+                <p class="mt-3" style="opacity: 0.7;">Background Image Placeholder</p>
             </div>
         </div>
     </section>
