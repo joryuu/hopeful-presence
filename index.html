@@ -13,7 +13,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Bodoni+Moda:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Gloock&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -36,13 +36,20 @@
             max-width: 1200px;
         }
 
-        /* Headers use Bodoni Moda */
+        /* Headers use Gloock */
         h1, h2,
         .navbar-brand,
         .section-headline {
-            font-family: 'Bodoni Moda', Georgia, serif;
+            font-family: 'Gloock', Georgia, serif;
             font-weight: 400;
             letter-spacing: -1.5px;
+        }
+
+        /* Button text uses Gloock */
+        .btn-hero-primary,
+        .btn-hero-secondary,
+        .btn-project-details {
+            font-family: 'Gloock', Georgia, serif;
         }
 
         h1 {
@@ -53,18 +60,24 @@
             font-size: 3.2rem;
         }
 
-        /* h3 and below use Poppins Semi-Bold with accent color */
+        /* h3 and below use Poppins Medium with accent color */
         h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
-            font-weight: 600;
+            font-weight: 500;
             color: #B89946;
         }
 
         /* Navigation */
         .navbar {
+            background-color: transparent;
+            box-shadow: none;
+            padding: 1rem 0;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .navbar.scrolled {
             background-color: var(--light-bg);
             box-shadow: 0 2px 8px rgba(0,1,81,0.15);
-            padding: 1rem 0;
         }
 
         .navbar-brand {
@@ -81,7 +94,7 @@
         }
 
         .nav-link:hover {
-            color: var(--accent-color) !important;
+            color: #B89946 !important;
         }
 
         /* Hero Section */
@@ -129,13 +142,13 @@
         }
 
         .btn-hero-primary {
-            background-color: var(--accent-color);
+            background-color: #B89946;
             color: var(--dark-bg);
             border: none;
             padding: 16px 45px;
             font-size: 1.05rem;
             font-weight: 600;
-            border-radius: 4px;
+            border-radius: 0;
             transition: all 0.3s;
             text-decoration: none;
         }
@@ -154,7 +167,7 @@
             padding: 14px 45px;
             font-size: 1.05rem;
             font-weight: 600;
-            border-radius: 4px;
+            border-radius: 0;
             transition: all 0.3s;
             text-decoration: none;
         }
@@ -186,7 +199,7 @@
         }
 
         .results-bar .stat i {
-            color: var(--accent-color);
+            color: #B89946;
             margin-right: 10px;
             font-size: 1.5rem;
         }
@@ -215,7 +228,7 @@
         .case-study h3 {
             font-size: 1.35rem;
             font-weight: 700;
-            color: var(--accent-color);
+            color: #B89946;
             margin-top: 1.5rem;
             margin-bottom: 0.75rem;
             font-family: 'Poppins', sans-serif;
@@ -225,7 +238,7 @@
             background: linear-gradient(135deg, rgba(0, 1, 81, 0.85) 0%, rgba(26, 43, 107, 0.85) 100%),
                         linear-gradient(135deg, #c0c0c0 0%, #e5e5e5 100%);
             border: 2px dashed rgba(0, 1, 81, 0.2);
-            border-radius: 10px;
+            border-radius: 0;
             min-height: 400px;
             display: flex;
             align-items: center;
@@ -245,7 +258,7 @@
             right: 0;
             bottom: 0;
             background: rgba(0, 1, 81, 0.28);
-            border-radius: 10px;
+            border-radius: 0;
             pointer-events: none;
         }
 
@@ -264,7 +277,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--accent-color);
+            color: #B89946;
             font-weight: bold;
             font-size: 1.3rem;
         }
@@ -305,7 +318,7 @@
         .testimonial-card {
             background: white;
             border: 1px solid rgba(0, 1, 81, 0.1);
-            border-radius: 10px;
+            border-radius: 0;
             padding: 35px;
             margin-bottom: 30px;
             box-shadow: 0 3px 12px rgba(0, 1, 81, 0.08);
@@ -357,8 +370,8 @@
         .result-item {
             background: var(--light-bg);
             padding: 25px;
-            border-radius: 8px;
-            border-left: 4px solid var(--accent-color);
+            border-radius: 0;
+            border-left: 4px solid #B89946;
             box-shadow: 0 2px 10px rgba(0, 1, 81, 0.08);
             transition: all 0.3s;
         }
@@ -399,7 +412,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--accent-color);
+            color: #B89946;
             font-weight: bold;
             font-size: 1.2rem;
         }
@@ -428,7 +441,7 @@
 
         .timeline-line-progress {
             height: 100%;
-            background: var(--accent-color);
+            background: #B89946;
             width: 0;
             transition: width 1.5s ease-out;
         }
@@ -458,7 +471,7 @@
             justify-content: center;
             width: 60px;
             height: 60px;
-            background-color: var(--accent-color);
+            background-color: #B89946;
             color: var(--dark-bg);
             border-radius: 50%;
             font-size: 1.8rem;
@@ -482,6 +495,103 @@
             margin: 0;
             font-size: 0.95rem;
             line-height: 1.5;
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            padding: 80px 0;
+            background-color: var(--light-bg);
+        }
+
+        .pricing-header {
+            font-family: 'Gloock', Georgia, serif;
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: -1.5px;
+            color: var(--primary-color);
+            line-height: 1.2;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 40px 30px;
+            border-left: 2px dotted var(--primary-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pricing-card h3 {
+            font-family: 'Gloock', Georgia, serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .pricing-card p {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+        }
+
+        .pricing-card ul li {
+            padding: 6px 0;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .pricing-card ul li::before {
+            content: '• ';
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .price-tag {
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .price-tag .label {
+            font-family: 'Gloock', Georgia, serif;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .price-button {
+            display: inline-block;
+            background-color: #B89946;
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-family: 'Gloock', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .price-button:hover {
+            background-color: #a88840;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(184, 153, 70, 0.3);
         }
 
         /* Final CTA */
@@ -511,7 +621,7 @@
         .trust-indicators {
             margin-top: 3rem;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.2);
+            border-top: 2px dotted var(--primary-color);
             font-size: 0.95rem;
             opacity: 0.9;
         }
@@ -530,7 +640,7 @@
         }
 
         .footer a:hover {
-            color: var(--accent-color);
+            color: #B89946;
         }
 
         /* Scroll-based fade-in animations */
@@ -602,6 +712,15 @@
             }
 
             .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .pricing-header {
                 font-size: 2rem;
             }
         }
@@ -897,6 +1016,68 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section class="pricing-section fade-in-section" id="pricing">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 mb-4 mb-lg-0">
+                    <h2 class="pricing-header">Service Packages & Pricing</h2>
+                </div>
+                <div class="col-lg-9">
+                    <div class="pricing-grid">
+                        <div class="pricing-card">
+                            <h3>Flyers & Offering Memoranda</h3>
+                            <p>Investment-grade collateral with 2-5 day turnaround for data-heavy properties</p>
+                            <ul>
+                                <li>Flyers: $129-249</li>
+                                <li>6-20 pages: $249-399</li>
+                                <li>20+ pages: $399-699</li>
+                                <li>Rush delivery available (+25-50%)</li>
+                            </ul>
+                            <div class="price-tag">
+                                <div class="label">Starting at</div>
+                                <a href="#contact" class="price-button">$129</a>
+                            </div>
+                        </div>
+
+                        <div class="pricing-card">
+                            <h3>Templates & Brand Systems</h3>
+                            <p>Reusable design infrastructure for consistent output across multiple properties or brokers</p>
+                            <ul>
+                                <li>InDesign, Canva, or PowerPoint format</li>
+                                <li>InDesign data merge automation: +$49</li>
+                                <li>Asset library (colors, type, icons) included</li>
+                            </ul>
+                            <div class="price-tag">
+                                <div class="label">Starting at</div>
+                                <a href="#contact" class="price-button">$399</a>
+                            </div>
+                        </div>
+
+                        <div class="pricing-card">
+                            <h3>Complete Campaign Package</h3>
+                            <p>Integrated marketing system including brochures, site plans, signage, social media assets</p>
+                            <ul>
+                                <li>Email campaigns starting at $49</li>
+                                <li>Landing pages starting at $449</li>
+                            </ul>
+                            <div class="price-tag">
+                                <div class="label">Starting at</div>
+                                <a href="#contact" class="price-button">$1,799</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <p style="font-size: 1rem; color: #555;">Choose from fixed-price contracts with clear milestones and 3 revision rounds or $30-50/hour for ongoing support, template updates, or variable scope</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Final CTA Section -->
     <section class="final-cta fade-in-section" id="contact">
         <div class="container">
@@ -923,13 +1104,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h5 style="color: var(--accent-color);">Sarah Lombardo</h5>
+                    <h5 style="color: #B89946;">Sarah Lombardo</h5>
                     <p>Commercial Real Estate Marketing Specialist</p>
                     <p>Transforming property data into institutional-quality materials that close deals.</p>
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h5 style="color: var(--accent-color);">Quick Links</h5>
+                    <h5 style="color: #B89946;">Quick Links</h5>
                     <ul class="list-unstyled">
                         <li><a href="#services">Services</a></li>
                         <li><a href="#results">Results</a></li>
@@ -940,7 +1121,7 @@
                 </div>
 
                 <div class="col-lg-4">
-                    <h5 style="color: var(--accent-color);">Connect</h5>
+                    <h5 style="color: #B89946;">Connect</h5>
                     <p>Email: <a href="mailto:sarah@example.com">sarah@example.com</a></p>
                     <p>Phone: <a href="tel:+15555555555">(555) 555-5555</a></p>
                     <div class="mt-3">
@@ -1017,6 +1198,16 @@
             if (timelineContainer) {
                 timelineObserver.observe(timelineContainer);
             }
+
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
         });
     </script>
 </body>
