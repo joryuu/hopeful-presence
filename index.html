@@ -13,7 +13,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Instrument+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Bodoni+Moda:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -36,19 +36,27 @@
             max-width: 1200px;
         }
 
-        /* Headers use Instrument Serif */
+        /* Headers use Bodoni Moda */
         h1, h2,
         .navbar-brand,
         .section-headline {
-            font-family: 'Instrument Serif', Georgia, serif;
-            font-weight: 600;
+            font-family: 'Bodoni Moda', Georgia, serif;
+            font-weight: 400;
             letter-spacing: -1.5px;
         }
 
-        /* h3 and below use Poppins Bold with accent color */
+        h1 {
+            font-size: 4rem;
+        }
+
+        h2, .section-headline {
+            font-size: 3.2rem;
+        }
+
+        /* h3 and below use Poppins Semi-Bold with accent color */
         h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--accent-color);
         }
 
@@ -106,11 +114,11 @@
         }
 
         .hero-section h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
+            font-size: 4.5rem;
+            font-weight: 400;
             margin-bottom: 1.5rem;
             line-height: 1.15;
-            letter-spacing: -1px;
+            letter-spacing: -2px;
         }
 
         .hero-section .lead {
@@ -485,9 +493,35 @@
             color: var(--accent-color);
         }
 
+        /* Scroll-based fade-in animations */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Results bar always visible */
+        .results-bar {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2, .section-headline {
                 font-size: 2rem;
             }
 
@@ -559,7 +593,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section" loading="lazy">
+    <section class="hero-section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10 hero-content text-center">
@@ -575,7 +609,7 @@
     </section>
 
     <!-- Results Snapshot Bar -->
-    <section class="results-bar" loading="lazy">
+    <section class="results-bar">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
@@ -598,7 +632,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="stat">
-                        <i class="bi bi-building"></i>
+                        <i class="bi bi-people-fill"></i>
                         <span>Trusted by CBRE, JLL, C&W, Marcus & Millichap</span>
                     </div>
                 </div>
@@ -607,7 +641,7 @@
     </section>
 
     <!-- Case Study 1: Contra Costa Logistics Center -->
-    <section class="case-study" id="results" loading="lazy">
+    <section class="case-study fade-in-section" id="results">
         <div class="container">
             <div class="row align-items-start">
                 <div class="col-lg-6 mb-4 mb-lg-0">
@@ -646,7 +680,7 @@
     </section>
 
     <!-- Case Study 2: Martinez What's Next -->
-    <section class="case-study" loading="lazy">
+    <section class="case-study fade-in-section">
         <div class="container">
             <div class="row align-items-start">
                 <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
@@ -685,7 +719,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials" loading="lazy">
+    <section class="testimonials fade-in-section">
         <div class="container">
             <h2 class="section-headline">What Happens When You Work With Me</h2>
 
@@ -716,7 +750,7 @@
     </section>
 
     <!-- About/Expertise Section -->
-    <section class="about-section" loading="lazy">
+    <section class="about-section fade-in-section">
         <div class="container">
             <h2 class="section-headline">Marketing That Drives Measurable Results</h2>
 
@@ -771,7 +805,7 @@
     </section>
 
     <!-- How It Works Section -->
-    <section class="how-it-works" id="process" loading="lazy">
+    <section class="how-it-works fade-in-section" id="process">
         <div class="container">
             <h2 class="section-headline">From Intake to Impact: My Process</h2>
 
@@ -817,7 +851,7 @@
     </section>
 
     <!-- Final CTA Section -->
-    <section class="final-cta" id="contact" loading="lazy">
+    <section class="final-cta fade-in-section" id="contact">
         <div class="container">
             <h2>Ready to Accelerate Your Next Transaction?</h2>
             <p class="lead">Whether you're raising capital, leasing space, or closing a sale, let's create marketing materials that drive results.</p>
@@ -879,5 +913,33 @@
 
     <!-- Bootstrap 5 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: stop observing after animation
+                    // observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in sections
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeInSections = document.querySelectorAll('.fade-in-section');
+            fadeInSections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
