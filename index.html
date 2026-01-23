@@ -81,13 +81,13 @@
             box-shadow: 0 2px 8px rgba(0,1,81,0.15) !important;
         }
 
-        .navbar-light {
-            background: none !important;
-            background-color: transparent !important;
+        .navbar-toggler {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: none;
         }
 
-        .navbar-light .navbar-toggler {
-            background-color: rgba(255, 255, 255, 0.1);
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 17, 81, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
 
         .navbar-brand {
@@ -805,7 +805,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#">Sarah Lombardo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
