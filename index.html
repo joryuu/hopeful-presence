@@ -13,7 +13,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Serif+Display:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Bodoni+Moda:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -36,12 +36,20 @@
             max-width: 1200px;
         }
 
-        /* Headers use Noto Serif Display Black */
-        h1, h2, h3, h4, h5, h6,
+        /* Headers use Bodoni Moda */
+        h1, h2,
         .navbar-brand,
         .section-headline {
-            font-family: 'Noto Serif Display', Georgia, serif;
-            font-weight: 900;
+            font-family: 'Bodoni Moda', Georgia, serif;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+        }
+
+        /* h3 and below use Poppins Bold with accent color */
+        h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            color: var(--accent-color);
         }
 
         /* Navigation */
@@ -165,7 +173,7 @@
 
         .results-bar .stat {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
             padding: 0 15px;
             border-right: 1px solid rgba(255,255,255,0.2);
@@ -204,10 +212,11 @@
 
         .case-study h3 {
             font-size: 1.35rem;
-            font-weight: 600;
-            color: var(--primary-color);
+            font-weight: 700;
+            color: var(--accent-color);
             margin-top: 1.5rem;
             margin-bottom: 0.75rem;
+            font-family: 'Poppins', sans-serif;
         }
 
         .case-study-image {
@@ -311,6 +320,7 @@
             font-weight: 700;
             color: var(--accent-color);
             margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
         .testimonial-text {
@@ -739,10 +749,6 @@
                 <div class="result-item">
                     <h4>40+ Institutional Portfolios</h4>
                     <p>Delivered for major CRE firms</p>
-                </div>
-                <div class="result-item">
-                    <h4>Trusted Partnerships</h4>
-                    <p>CBRE, JLL, Cushman & Wakefield, Marcus & Millichap, Compass, Lee & Associates, Sagemont</p>
                 </div>
             </div>
 
