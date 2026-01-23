@@ -89,8 +89,8 @@
         }
 
         .navbar.scrolled {
-            background: none !important;
-            background-color: transparent !important;
+            background: white !important;
+            background-color: white !important;
             box-shadow: 0 2px 8px rgba(0,1,81,0.15) !important;
             position: fixed;
         }
@@ -823,6 +823,25 @@
                 color: #B89946;
             }
 
+            .mobile-menu-close {
+                position: absolute;
+                top: 2rem;
+                right: 2rem;
+                background: none;
+                border: none;
+                font-size: 2.5rem;
+                color: var(--primary-color);
+                cursor: pointer;
+                z-index: 10000;
+                padding: 0;
+                line-height: 1;
+                font-weight: 300;
+            }
+
+            .mobile-menu-close:hover {
+                color: #B89946;
+            }
+
             .hero-section h1 {
                 font-size: 2.5rem;
             }
@@ -901,6 +920,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
+                <button class="mobile-menu-close d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Close menu">×</button>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
