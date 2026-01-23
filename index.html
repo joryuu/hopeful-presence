@@ -89,7 +89,7 @@
             background: linear-gradient(135deg, rgba(0, 1, 81, 0.85) 0%, rgba(26, 43, 107, 0.85) 100%),
                         url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat;
             color: white;
-            min-height: 100vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -313,13 +313,12 @@
 
         .testimonial-card:hover {
             box-shadow: 0 6px 24px rgba(0, 1, 81, 0.12);
-            transform: translateY(-5px);
         }
 
         .testimonial-stat {
             font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--accent-color);
+            font-weight: 600;
+            color: #B89946;
             margin-bottom: 1rem;
             line-height: 1.2;
         }
@@ -349,9 +348,12 @@
 
         .results-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
             margin: 30px 0;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .result-item {
@@ -396,52 +398,92 @@
         }
 
         .expertise-list li::before {
-            content: '→';
+            content: '✓';
             position: absolute;
             left: 0;
             color: var(--accent-color);
             font-weight: bold;
+            font-size: 1.2rem;
         }
 
-        /* How It Works */
+        /* How It Works - Horizontal Timeline */
         .how-it-works {
             padding: 80px 0;
             background-color: var(--light-bg);
         }
 
+        .timeline-container {
+            position: relative;
+            padding: 60px 0;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .timeline-line-container {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: rgba(0, 1, 81, 0.1);
+        }
+
+        .timeline-line-progress {
+            height: 100%;
+            background: var(--accent-color);
+            width: 0;
+            transition: width 1.5s ease-out;
+        }
+
+        .timeline-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            position: relative;
+        }
+
         .process-step {
-            margin-bottom: 40px;
-            padding: 35px;
-            background: white;
-            border-radius: 8px;
-            border-left: 5px solid var(--accent-color);
-            box-shadow: 0 2px 10px rgba(0, 1, 81, 0.08);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .process-step.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .process-number {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
             background-color: var(--accent-color);
             color: var(--dark-bg);
             border-radius: 50%;
-            text-align: center;
-            line-height: 50px;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 12px rgba(209, 179, 95, 0.3);
         }
 
         .process-step h4 {
             color: var(--primary-color);
             font-weight: 700;
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            font-family: 'Poppins', sans-serif;
         }
 
         .process-step p {
             color: #555;
             margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         /* Final CTA */
@@ -542,6 +584,19 @@
 
             .expertise-list {
                 column-count: 1;
+            }
+
+            .results-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-steps {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .timeline-line-container {
+                display: none;
             }
 
             .section-headline {
@@ -775,10 +830,7 @@
 
             <div class="row mt-5">
                 <div class="col-lg-6">
-                    <h3 style="color: var(--primary-color); font-weight: 700;">What I Do</h3>
-                    <p>I design and write marketing materials for commercial real estate brokers, property owners, and institutional investors—transforming property data and investment narratives into polished collateral that accelerates decisions and closes deals.</p>
-
-                    <h3 class="mt-4" style="color: var(--primary-color); font-weight: 700;">Expertise Includes</h3>
+                    <h3 style="color: var(--primary-color); font-weight: 700;">Expertise Includes</h3>
                     <ul class="expertise-list">
                         <li>Offering memorandums and investment sales materials</li>
                         <li>Investor pitch decks and fund marketing</li>
@@ -809,33 +861,31 @@
         <div class="container">
             <h2 class="section-headline">From Intake to Impact: My Process</h2>
 
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="process-step">
+            <div class="timeline-container">
+                <div class="timeline-line-container">
+                    <div class="timeline-line-progress" id="timelineProgress"></div>
+                </div>
+
+                <div class="timeline-steps">
+                    <div class="process-step" data-step="1">
                         <div class="process-number">1</div>
                         <h4>Strategic Discovery</h4>
                         <p>I analyze your property, transaction type, target audience, and competitive landscape to identify the most compelling value proposition.</p>
                     </div>
-                </div>
 
-                <div class="col-lg-6">
-                    <div class="process-step">
+                    <div class="process-step" data-step="2">
                         <div class="process-number">2</div>
                         <h4>Data-Driven Positioning</h4>
                         <p>Complex property data, market research, and financial metrics are transformed into clear, persuasive narratives that resonate with your specific audience.</p>
                     </div>
-                </div>
 
-                <div class="col-lg-6">
-                    <div class="process-step">
+                    <div class="process-step" data-step="3">
                         <div class="process-number">3</div>
                         <h4>Institutional-Quality Execution</h4>
                         <p>Every deliverable is designed to compete at the highest level—polished, professional materials that reflect well on your brand and command attention.</p>
                     </div>
-                </div>
 
-                <div class="col-lg-6">
-                    <div class="process-step">
+                    <div class="process-step" data-step="4">
                         <div class="process-number">4</div>
                         <h4>Accelerated Results</h4>
                         <p>Materials are optimized to drive decisions faster, whether that's securing tenant interest, attracting investor capital, or winning competitive listings.</p>
@@ -843,7 +893,7 @@
                 </div>
             </div>
 
-            <div class="text-center mt-4">
+            <div class="text-center mt-5">
                 <p style="font-size: 1.1rem; color: #555;"><strong>Timeline:</strong> Most projects deliver within 5-10 business days depending on scope and complexity. Rush timelines available for urgent transactions.</p>
                 <a href="#contact" class="btn btn-hero-primary mt-3">Start a Project</a>
             </div>
@@ -933,12 +983,43 @@
             });
         }, observerOptions);
 
-        // Observe all fade-in sections
+        // Timeline animation observer
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateTimeline();
+                    timelineObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        function animateTimeline() {
+            const progressLine = document.getElementById('timelineProgress');
+            const steps = document.querySelectorAll('.process-step');
+
+            // Animate the line to full width
+            progressLine.style.width = '100%';
+
+            // Fade in each step sequentially
+            steps.forEach((step, index) => {
+                setTimeout(() => {
+                    step.classList.add('is-visible');
+                }, index * 300); // 300ms delay between each step
+            });
+        }
+
+        // Observe all fade-in sections and timeline
         document.addEventListener('DOMContentLoaded', () => {
             const fadeInSections = document.querySelectorAll('.fade-in-section');
             fadeInSections.forEach(section => {
                 observer.observe(section);
             });
+
+            // Observe the timeline container
+            const timelineContainer = document.querySelector('.timeline-container');
+            if (timelineContainer) {
+                timelineObserver.observe(timelineContainer);
+            }
         });
     </script>
 </body>
