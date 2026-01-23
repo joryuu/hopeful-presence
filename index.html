@@ -19,7 +19,7 @@
         :root {
             --primary-color: #001151;
             --secondary-color: #1a2b6b;
-            --accent-color: #D1B35F;
+            --accent-color: #B89946;
             --accent-light: #BCCDE;
             --dark-bg: #001151;
             --light-bg: #EAEAE9;
@@ -72,7 +72,7 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             color: #B89946;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.15rem;
         }
 
         /* Navigation */
@@ -139,7 +139,7 @@
             background: linear-gradient(135deg, rgba(0, 1, 81, 0.85) 0%, rgba(26, 43, 107, 0.85) 100%),
                         url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat;
             color: white;
-            min-height: 75vh;
+            min-height: 87.5vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -763,6 +763,66 @@
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
+            /* Full-screen mobile menu */
+            .navbar-collapse {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: white;
+                z-index: 9999;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .navbar-collapse.show {
+                display: flex;
+            }
+
+            .navbar-collapse.collapsing {
+                display: flex;
+            }
+
+            .navbar-nav {
+                width: 100%;
+            }
+
+            .nav-link {
+                color: var(--primary-color) !important;
+                font-family: 'Gloock', Georgia, serif;
+                font-size: 2rem;
+                padding: 1rem 0;
+            }
+
+            .navbar.scrolled .nav-link {
+                color: var(--primary-color) !important;
+            }
+
+            .nav-link:hover {
+                color: #B89946 !important;
+            }
+
+            .dropdown-menu {
+                background-color: white;
+                border: none;
+                text-align: center;
+            }
+
+            .dropdown-item {
+                color: var(--primary-color);
+                font-family: 'Gloock', Georgia, serif;
+                font-size: 1.5rem;
+                padding: 0.75rem 0;
+            }
+
+            .dropdown-item:hover {
+                background-color: transparent;
+                color: #B89946;
+            }
+
             .hero-section h1 {
                 font-size: 2.5rem;
             }
