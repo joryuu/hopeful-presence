@@ -72,6 +72,7 @@
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             color: #B89946;
+            margin-bottom: 0.5rem;
         }
 
         /* Navigation */
@@ -100,20 +101,33 @@
         }
 
         .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .navbar.scrolled .navbar-toggler-icon {
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 17, 81, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
 
         .navbar-brand {
             font-weight: 700;
             font-size: 1.8rem;
-            color: var(--primary-color) !important;
+            color: white !important;
             letter-spacing: -0.5px;
+            transition: color 0.3s;
+        }
+
+        .navbar.scrolled .navbar-brand {
+            color: var(--primary-color) !important;
         }
 
         .nav-link {
-            color: var(--primary-color) !important;
+            color: white !important;
             font-weight: 500;
             transition: color 0.3s;
+        }
+
+        .navbar.scrolled .nav-link {
+            color: var(--primary-color) !important;
         }
 
         .nav-link:hover {
@@ -125,7 +139,7 @@
             background: linear-gradient(135deg, rgba(0, 1, 81, 0.85) 0%, rgba(26, 43, 107, 0.85) 100%),
                         url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat;
             color: white;
-            min-height: 100vh;
+            min-height: 75vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -168,10 +182,11 @@
             background-color: #B89946;
             color: var(--dark-bg);
             border: none;
-            padding: 16px 45px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            border-radius: 0;
+            padding: 15px 40px;
+            font-size: 1.5rem;
+            font-weight: 400;
+            font-family: 'Gloock', Georgia, serif;
+            border-radius: 50px;
             transition: all 0.3s;
             text-decoration: none;
             min-width: 220px;
@@ -187,10 +202,11 @@
             background-color: transparent;
             color: white;
             border: 2px solid rgba(255, 255, 255, 0.9);
-            padding: 14px 45px;
-            font-size: 1.05rem;
-            font-weight: 600;
-            border-radius: 0;
+            padding: 13px 40px;
+            font-size: 1.5rem;
+            font-weight: 400;
+            font-family: 'Gloock', Georgia, serif;
+            border-radius: 50px;
             transition: all 0.3s;
             text-decoration: none;
             min-width: 220px;
@@ -252,11 +268,11 @@
 
         .case-study h3 {
             font-size: 1.35rem;
-            font-weight: 600;
-            color: #B89946;
+            font-weight: 400;
+            color: var(--primary-color);
             margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-family: 'Poppins', sans-serif;
+            margin-bottom: 0.5rem;
+            font-family: 'Gloock', Georgia, serif;
         }
 
         .case-study-image {
