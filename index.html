@@ -60,23 +60,23 @@
             font-size: 3.2rem;
         }
 
-        /* h3 and below use Poppins Medium with accent color */
+        /* h3 and below use Poppins with accent color */
         h3, h4, h5, h6 {
             font-family: 'Poppins', sans-serif;
-            font-weight: 500;
+            font-weight: 400;
             color: #B89946;
         }
 
         /* Navigation */
         .navbar {
-            background-color: transparent;
+            background-color: transparent !important;
             box-shadow: none;
             padding: 1rem 0;
             transition: background-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .navbar.scrolled {
-            background-color: var(--light-bg);
+            background-color: var(--light-bg) !important;
             box-shadow: 0 2px 8px rgba(0,1,81,0.15);
         }
 
@@ -151,13 +151,13 @@
             border-radius: 0;
             transition: all 0.3s;
             text-decoration: none;
+            min-width: 220px;
+            text-align: center;
         }
 
         .btn-hero-primary:hover {
-            background-color: #bfa556;
-            color: var(--dark-bg);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(209, 179, 95, 0.35);
+            background-color: white;
+            color: var(--primary-color);
         }
 
         .btn-hero-secondary {
@@ -170,6 +170,8 @@
             border-radius: 0;
             transition: all 0.3s;
             text-decoration: none;
+            min-width: 220px;
+            text-align: center;
         }
 
         .btn-hero-secondary:hover {
@@ -227,7 +229,7 @@
 
         .case-study h3 {
             font-size: 1.35rem;
-            font-weight: 700;
+            font-weight: 400;
             color: #B89946;
             margin-top: 1.5rem;
             margin-bottom: 0.75rem;
@@ -303,7 +305,7 @@
         /* Testimonials */
         .testimonials {
             padding: 80px 0;
-            background-color: var(--light-bg);
+            background-color: white;
         }
 
         .section-headline {
@@ -357,7 +359,7 @@
         /* About/Expertise */
         .about-section {
             padding: 80px 0;
-            background-color: white;
+            background-color: var(--light-bg);
         }
 
         .results-grid {
@@ -420,7 +422,7 @@
         /* How It Works - Horizontal Timeline */
         .how-it-works {
             padding: 80px 0;
-            background-color: var(--light-bg);
+            background-color: white;
         }
 
         .timeline-container {
@@ -435,13 +437,13 @@
             top: 90px;
             left: 0;
             right: 0;
-            height: 4px;
-            background: rgba(0, 1, 81, 0.1);
+            height: 2px;
+            border-top: 2px dotted rgba(0, 1, 81, 0.3);
         }
 
         .timeline-line-progress {
             height: 100%;
-            background: #B89946;
+            border-top: 2px dotted var(--primary-color);
             width: 0;
             transition: width 1.5s ease-out;
         }
@@ -520,7 +522,7 @@
         }
 
         .pricing-card {
-            background: white;
+            background: transparent;
             padding: 40px 30px;
             border-left: 2px dotted var(--primary-color);
             display: flex;
