@@ -25,7 +25,7 @@
             --light-bg: #EAEAE9;
         }
 
-        html {
+        html, body {
             margin: 0;
             padding: 0;
         }
@@ -34,8 +34,6 @@
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
-            margin: 0;
-            padding: 0;
         }
 
         /* Max width constraint */
@@ -89,7 +87,6 @@
         }
 
         .navbar.scrolled {
-            background: white !important;
             background-color: white !important;
             box-shadow: 0 2px 8px rgba(0,1,81,0.15) !important;
             position: fixed;
@@ -108,29 +105,29 @@
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 17, 81, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
         }
 
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.8rem;
+        .navbar-brand,
+        .nav-link {
             color: white !important;
-            letter-spacing: -0.5px;
             transition: color 0.3s;
         }
 
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+        }
+
+        .navbar.scrolled .nav-link,
         .navbar.scrolled .navbar-brand {
             color: var(--primary-color) !important;
         }
 
-        .nav-link {
-            color: white !important;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .navbar.scrolled .nav-link {
-            color: var(--primary-color) !important;
-        }
-
-        .nav-link:hover {
+        .nav-link:hover,
+        .footer a:hover {
             color: #B89946 !important;
         }
 
@@ -147,13 +144,20 @@
             overflow: hidden;
         }
 
-        .hero-section::before {
+        .hero-section::before,
+        .testimonials::before,
+        .background-image-section::before,
+        .case-study-image::after {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
+        }
+
+        .hero-section::before,
+        .background-image-section::before {
             background: rgba(0, 1, 81, 0.28);
             z-index: 0;
         }
@@ -178,11 +182,8 @@
             color: rgba(255, 255, 255, 0.92);
         }
 
-        .btn-hero-primary {
-            background-color: #B89946;
-            color: var(--dark-bg);
-            border: none;
-            padding: 15px 40px;
+        .btn-hero-primary,
+        .btn-hero-secondary {
             font-size: 1.5rem;
             font-weight: 400;
             font-family: 'Gloock', Georgia, serif;
@@ -191,11 +192,13 @@
             text-decoration: none;
             min-width: 220px;
             text-align: center;
+            padding: 15px 40px;
         }
 
-        .btn-hero-primary:hover {
-            background-color: white;
-            color: var(--primary-color);
+        .btn-hero-primary {
+            background-color: #B89946;
+            color: var(--dark-bg);
+            border: none;
         }
 
         .btn-hero-secondary {
@@ -203,19 +206,15 @@
             color: white;
             border: 2px solid rgba(255, 255, 255, 0.9);
             padding: 13px 40px;
-            font-size: 1.5rem;
-            font-weight: 400;
-            font-family: 'Gloock', Georgia, serif;
-            border-radius: 50px;
-            transition: all 0.3s;
-            text-decoration: none;
-            min-width: 220px;
-            text-align: center;
         }
 
+        .btn-hero-primary:hover,
         .btn-hero-secondary:hover {
             background-color: white;
             color: var(--primary-color);
+        }
+
+        .btn-hero-secondary:hover {
             border-color: white;
         }
 
@@ -245,10 +244,17 @@
             font-size: 1.5rem;
         }
 
-        /* Case Studies */
-        .case-study {
+        /* Shared section padding */
+        .case-study,
+        .testimonials,
+        .about-section,
+        .how-it-works,
+        .pricing-section,
+        .final-cta {
             padding: 80px 0;
         }
+
+        /* Case Studies */
 
         .case-study:nth-child(even) {
             background-color: white;
@@ -292,34 +298,38 @@
 
         /* Dark overlay effect at 28% transparency for actual images */
         .case-study-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
             background: rgba(0, 1, 81, 0.28);
             border-radius: 0;
             pointer-events: none;
         }
 
-        .impact-list {
+        .impact-list,
+        .expertise-list {
             list-style: none;
             padding-left: 0;
         }
 
-        .impact-list li {
-            padding: 10px 0;
+        .impact-list li,
+        .expertise-list li {
             padding-left: 30px;
             position: relative;
         }
 
-        .impact-list li::before {
+        .impact-list li {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .impact-list li::before,
+        .expertise-list li::before {
             content: '✓';
             position: absolute;
             left: 0;
             color: #B89946;
             font-weight: bold;
+        }
+
+        .impact-list li::before {
             font-size: 1.3rem;
         }
 
@@ -351,19 +361,12 @@
 
         /* Testimonials */
         .testimonials {
-            padding: 80px 0;
             background: linear-gradient(135deg, rgba(0, 1, 81, 0.9) 0%, rgba(26, 43, 107, 0.9) 100%),
                         url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2000') center/cover no-repeat;
             position: relative;
         }
 
         .testimonials::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
             background: rgba(0, 1, 81, 0.3);
         }
 
@@ -378,10 +381,6 @@
             letter-spacing: 0.5px;
         }
 
-        .testimonials .testimonial-card {
-            background: transparent;
-        }
-
         .section-headline {
             text-align: center;
             font-size: 2.8rem;
@@ -391,8 +390,12 @@
             letter-spacing: -1px;
         }
 
-        .testimonial-card {
+        .testimonial-card,
+        .pricing-card {
             background: transparent;
+        }
+
+        .testimonial-card {
             border: none;
             border-radius: 0;
             padding: 35px;
@@ -433,7 +436,6 @@
 
         /* About/Expertise */
         .about-section {
-            padding: 80px 0;
             background-color: white;
         }
 
@@ -472,31 +474,22 @@
         }
 
         .expertise-list {
-            list-style: none;
-            padding-left: 0;
             column-count: 2;
             column-gap: 30px;
         }
 
         .expertise-list li {
-            padding: 8px 0;
-            padding-left: 30px;
-            position: relative;
+            padding-top: 8px;
+            padding-bottom: 8px;
             break-inside: avoid;
         }
 
         .expertise-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #B89946;
-            font-weight: bold;
             font-size: 1.2rem;
         }
 
         /* How It Works - Horizontal Timeline */
         .how-it-works {
-            padding: 80px 0;
             background-color: var(--light-bg);
         }
 
@@ -586,19 +579,9 @@
             position: relative;
         }
 
-        .background-image-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 1, 81, 0.28);
-        }
 
         /* Pricing Section */
         .pricing-section {
-            padding: 80px 0;
             background-color: var(--light-bg);
         }
 
@@ -619,7 +602,6 @@
         }
 
         .pricing-card {
-            background: transparent;
             padding: 40px 30px;
             border-left: 2px dotted var(--primary-color);
             display: flex;
@@ -695,7 +677,6 @@
 
         /* Final CTA */
         .final-cta {
-            padding: 80px 0;
             background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
             text-align: center;
@@ -739,10 +720,6 @@
             transition: color 0.3s;
         }
 
-        .footer a:hover {
-            color: #B89946;
-        }
-
         /* Scroll-based fade-in animations */
         .fade-in-section {
             opacity: 0;
@@ -778,10 +755,7 @@
                 text-align: center;
             }
 
-            .navbar-collapse.show {
-                display: flex;
-            }
-
+            .navbar-collapse.show,
             .navbar-collapse.collapsing {
                 display: flex;
             }
@@ -801,7 +775,9 @@
                 color: var(--primary-color) !important;
             }
 
-            .nav-link:hover {
+            .nav-link:hover,
+            .dropdown-item:hover,
+            .mobile-menu-close:hover {
                 color: #B89946 !important;
             }
 
@@ -820,7 +796,6 @@
 
             .dropdown-item:hover {
                 background-color: transparent;
-                color: #B89946;
             }
 
             .mobile-menu-close {
@@ -838,14 +813,7 @@
                 font-weight: 300;
             }
 
-            .mobile-menu-close:hover {
-                color: #B89946;
-            }
-
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-
+            .hero-section h1,
             h1 {
                 font-size: 2.5rem;
             }
@@ -886,10 +854,7 @@
                 display: none;
             }
 
-            .section-headline {
-                font-size: 2rem;
-            }
-
+            .section-headline,
             .final-cta h2 {
                 font-size: 2rem;
             }
