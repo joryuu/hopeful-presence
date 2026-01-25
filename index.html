@@ -146,8 +146,7 @@
 
         .hero-section::before,
         .testimonials::before,
-        .background-image-section::before,
-        .case-study-image::after {
+        .background-image-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -332,24 +331,17 @@
             flex: 1;
             min-height: 400px;
             overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-        .case-study-image img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            display: block;
+        .case-study-image.align-left {
+            background-position: left center;
         }
 
-        /* Dark overlay effect at 28% transparency for actual images */
-        .case-study-image::after {
-            background: rgba(0, 1, 81, 0.28);
-            border-radius: 0;
-            pointer-events: none;
+        .case-study-image.align-right {
+            background-position: right center;
         }
 
         .impact-list,
@@ -1033,8 +1025,7 @@
         <div class="container">
             <div class="row align-items-start">
                 <div class="col-lg-6">
-                    <div class="case-study-image">
-                        <img src="marketing1@2400px.webp" alt="Contra Costa Logistics Center">
+                    <div class="case-study-image align-left" style="background-image: url('marketing1@2400px.webp');">
                     </div>
                 </div>
                 <div class="col-lg-6 case-study-content">
@@ -1069,8 +1060,7 @@
         <div class="container">
             <div class="row align-items-start">
                 <div class="col-lg-6 order-lg-2">
-                    <div class="case-study-image">
-                        <img src="research@2400px.webp" alt="Martinez Research Brochure">
+                    <div class="case-study-image align-right" style="background-image: url('research@2400px.webp');">
                     </div>
                 </div>
                 <div class="col-lg-6 order-lg-1 case-study-content">
