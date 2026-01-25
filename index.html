@@ -551,18 +551,25 @@
         }
 
         .result-card-circular {
-            text-align: center;
+            position: relative;
+            text-align: left;
+            padding-left: 60px;
+            min-height: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .metric-circle {
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
             width: 240px;
             height: 240px;
             border-radius: 50%;
-            background-color: #C5B896;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 30px;
+            background-color: #B89946;
+            z-index: 0;
         }
 
         .metric-value {
@@ -571,6 +578,9 @@
             font-weight: 400;
             color: var(--primary-color);
             line-height: 1;
+            position: relative;
+            z-index: 1;
+            margin-bottom: 0.5rem;
         }
 
         .result-card-circular h4 {
@@ -580,6 +590,8 @@
             color: var(--primary-color);
             margin-bottom: 0.5rem;
             line-height: 1.2;
+            position: relative;
+            z-index: 1;
         }
 
         .result-card-circular p {
@@ -587,6 +599,8 @@
             font-size: 1rem;
             margin: 0;
             line-height: 1.5;
+            position: relative;
+            z-index: 1;
         }
 
         /* About Section - Style B (Minimal with Dividers) */
@@ -1312,30 +1326,26 @@
                 <div class="col-lg-6">
                     <div class="results-grid-circular">
                         <div class="result-card-circular">
-                            <div class="metric-circle">
-                                <div class="metric-value">$1B</div>
-                            </div>
+                            <div class="metric-circle"></div>
+                            <div class="metric-value">$1B</div>
                             <h4>in Client Investments</h4>
                             <p>Portfolio growth and capital raised</p>
                         </div>
                         <div class="result-card-circular">
-                            <div class="metric-circle">
-                                <div class="metric-value">2M SF</div>
-                            </div>
+                            <div class="metric-circle"></div>
+                            <div class="metric-value">2M SF</div>
                             <h4>Project Lease-Up</h4>
                             <p>Contra Costa Logistics Center</p>
                         </div>
                         <div class="result-card-circular">
-                            <div class="metric-circle">
-                                <div class="metric-value">89%</div>
-                            </div>
+                            <div class="metric-circle"></div>
+                            <div class="metric-value">89%</div>
                             <h4>Email Reduction</h4>
                             <p>Marketing system efficiency</p>
                         </div>
                         <div class="result-card-circular">
-                            <div class="metric-circle">
-                                <div class="metric-value">6.2B SF</div>
-                            </div>
+                            <div class="metric-circle"></div>
+                            <div class="metric-value">6.2B SF</div>
                             <h4>Portfolio Retained</h4>
                             <p>C&W Services facility clients</p>
                         </div>
