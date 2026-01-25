@@ -136,7 +136,7 @@
             background: linear-gradient(135deg, rgba(0, 1, 81, 0.85) 0%, rgba(26, 43, 107, 0.85) 100%),
                         url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2000') center/cover no-repeat;
             color: white;
-            min-height: 87.5vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -172,6 +172,56 @@
             margin-bottom: 1.5rem;
             line-height: 1.15;
             letter-spacing: -2px;
+            position: relative;
+        }
+
+        /* Sliding headline animation */
+        .hero-stats-container {
+            position: relative;
+            margin-bottom: 2rem;
+            min-height: 80px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            opacity: 1;
+        }
+
+        .hero-stat {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .hero-stat i {
+            color: #B89946;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .sliding-headline {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, rgba(0, 1, 81, 0.95) 0%, rgba(26, 43, 107, 0.95) 100%);
+            padding: 10px 0;
+            animation: slideReveal 2s ease-in-out 1s forwards;
+            z-index: 2;
+        }
+
+        @keyframes slideReveal {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
         }
 
         .hero-section .lead {
@@ -218,30 +268,6 @@
         }
 
 
-        /* Results Bar */
-        .results-bar {
-            background-color: var(--dark-bg);
-            color: white;
-            padding: 25px 0;
-        }
-
-        .results-bar .stat {
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 0 15px;
-            border-right: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .results-bar .stat:last-child {
-            border-right: none;
-        }
-
-        .results-bar .stat i {
-            color: #B89946;
-            margin-right: 10px;
-            font-size: 1.5rem;
-        }
 
         /* Shared section padding */
         .case-study,
@@ -882,12 +908,6 @@
             transform: translateY(0);
         }
 
-        /* Results bar always visible */
-        .results-bar {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
         /* Responsive adjustments */
         @media (max-width: 991px) {
             /* Full-screen mobile menu */
@@ -976,15 +996,13 @@
                 font-size: 1.1rem;
             }
 
-            .results-bar .stat {
-                border-right: none;
-                border-bottom: 1px solid rgba(255,255,255,0.2);
-                padding: 15px;
-                justify-content: flex-start;
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
 
-            .results-bar .stat:last-child {
-                border-bottom: none;
+            .hero-stat {
+                font-size: 0.9rem;
             }
 
             .expertise-list {
@@ -1086,43 +1104,33 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10 hero-content text-center">
-                    <h1>Close Deals Faster With Marketing That Converts</h1>
+                    <div class="hero-stats-container">
+                        <div class="hero-stats">
+                            <div class="hero-stat">
+                                <i class="bi bi-trophy-fill"></i>
+                                <span>2023 SIOR Award Winner</span>
+                            </div>
+                            <div class="hero-stat">
+                                <i class="bi bi-currency-dollar"></i>
+                                <span>$10M+ Client Commissions Generated</span>
+                            </div>
+                            <div class="hero-stat">
+                                <i class="bi bi-graph-up-arrow"></i>
+                                <span>7.5x Faster Lease-Up</span>
+                            </div>
+                            <div class="hero-stat">
+                                <i class="bi bi-people-fill"></i>
+                                <span>Trusted by CBRE, JLL, C&W, Marcus & Millichap</span>
+                            </div>
+                        </div>
+                        <div class="sliding-headline">
+                            <h1>Close Deals Faster With Marketing That Converts</h1>
+                        </div>
+                    </div>
                     <p class="lead">CRE brokers and investors use my marketing to lease properties 7.5x faster, raise capital, and generate millions in commissions. From offering memorandums to investor decks, I transform property data into institutional-quality materials that accelerate decisions.</p>
                     <div class="d-flex gap-3 flex-wrap justify-content-center">
                         <a href="#contact" class="btn btn-hero-primary">Start Your Project</a>
                         <a href="#results" class="btn btn-hero-secondary">See Results</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results Snapshot Bar -->
-    <section class="results-bar">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat">
-                        <i class="bi bi-trophy-fill"></i>
-                        <span>2023 SIOR Award Winner</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat">
-                        <i class="bi bi-currency-dollar"></i>
-                        <span>$10M+ Client Commissions Generated</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat">
-                        <i class="bi bi-graph-up-arrow"></i>
-                        <span>7.5x Faster Lease-Up</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="stat">
-                        <i class="bi bi-people-fill"></i>
-                        <span>Trusted by CBRE, JLL, C&W, Marcus & Millichap</span>
                     </div>
                 </div>
             </div>
