@@ -179,20 +179,21 @@
         .hero-headline-container {
             position: relative;
             margin-bottom: 2rem;
-            min-height: 140px;
+            min-height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
 
         .alternating-headline {
             position: absolute;
             top: 50%;
-            left: 0;
-            right: 0;
+            left: 100%;
+            right: -100%;
             transform: translateY(-50%);
-            opacity: 0;
-            animation: fadeInOut 15s infinite;
+            white-space: nowrap;
+            animation: slideInOut 15s infinite;
         }
 
         .alternating-headline:nth-child(1) {
@@ -215,42 +216,40 @@
             animation-delay: 12s;
         }
 
-        @keyframes fadeInOut {
+        @keyframes slideInOut {
             0% {
-                opacity: 0;
-            }
-            2% {
+                left: 100%;
                 opacity: 1;
             }
-            18% {
+            10% {
+                left: 0;
+                opacity: 1;
+            }
+            16% {
+                left: 0;
                 opacity: 1;
             }
             20% {
-                opacity: 0;
+                left: -100%;
+                opacity: 1;
             }
             100% {
-                opacity: 0;
+                left: -100%;
+                opacity: 1;
             }
         }
 
         .alternating-headline h1 {
             margin: 0;
+            white-space: normal;
         }
 
         .alternating-headline .stat-display {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            font-size: 2.5rem;
+            font-size: 4.5rem;
             font-family: 'Gloock', Georgia, serif;
             font-weight: 400;
-            letter-spacing: -1px;
-        }
-
-        .alternating-headline .stat-display i {
-            color: #B89946;
-            font-size: 2.5rem;
+            letter-spacing: -2px;
+            line-height: 1.15;
         }
 
         .hero-section .lead {
@@ -1026,13 +1025,11 @@
             }
 
             .alternating-headline .stat-display {
-                font-size: 1.5rem;
-                flex-direction: column;
-                gap: 10px;
+                font-size: 2.5rem;
             }
 
-            .alternating-headline .stat-display i {
-                font-size: 2rem;
+            .hero-headline-container {
+                min-height: 150px;
             }
 
             .expertise-list {
@@ -1139,28 +1136,16 @@
                             <h1>Close Deals Faster With Marketing That Converts</h1>
                         </div>
                         <div class="alternating-headline">
-                            <div class="stat-display">
-                                <i class="bi bi-trophy-fill"></i>
-                                <span>2023 SIOR Award Winner</span>
-                            </div>
+                            <div class="stat-display">2023 SIOR Award Winner</div>
                         </div>
                         <div class="alternating-headline">
-                            <div class="stat-display">
-                                <i class="bi bi-currency-dollar"></i>
-                                <span>$10M+ Client Commissions Generated</span>
-                            </div>
+                            <div class="stat-display">$10M+ Client Commissions Generated</div>
                         </div>
                         <div class="alternating-headline">
-                            <div class="stat-display">
-                                <i class="bi bi-graph-up-arrow"></i>
-                                <span>7.5x Faster Lease-Up</span>
-                            </div>
+                            <div class="stat-display">7.5x Faster Lease-Up</div>
                         </div>
                         <div class="alternating-headline">
-                            <div class="stat-display">
-                                <i class="bi bi-people-fill"></i>
-                                <span>Trusted by CBRE, JLL, C&W, Marcus & Millichap</span>
-                            </div>
+                            <div class="stat-display">Trusted by CBRE, JLL, C&W, Marcus & Millichap</div>
                         </div>
                     </div>
                     <p class="lead">CRE brokers and investors use my marketing to lease properties 7.5x faster, raise capital, and generate millions in commissions. From offering memorandums to investor decks, I transform property data into institutional-quality materials that accelerate decisions.</p>
