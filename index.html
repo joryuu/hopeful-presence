@@ -183,17 +183,17 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
         }
 
         .alternating-headline {
             position: absolute;
             top: 50%;
-            left: 100%;
-            right: -100%;
-            transform: translateY(-50%);
-            white-space: nowrap;
-            animation: slideInOut 15s infinite;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            animation: fadeInOut 15s infinite;
+            width: 100%;
+            text-align: center;
         }
 
         .alternating-headline:nth-child(1) {
@@ -216,32 +216,26 @@
             animation-delay: 12s;
         }
 
-        @keyframes slideInOut {
+        @keyframes fadeInOut {
             0% {
-                left: 100%;
+                opacity: 0;
+            }
+            3% {
                 opacity: 1;
             }
-            10% {
-                left: 0;
-                opacity: 1;
-            }
-            16% {
-                left: 0;
+            17% {
                 opacity: 1;
             }
             20% {
-                left: -100%;
-                opacity: 1;
+                opacity: 0;
             }
             100% {
-                left: -100%;
-                opacity: 1;
+                opacity: 0;
             }
         }
 
         .alternating-headline h1 {
             margin: 0;
-            white-space: normal;
         }
 
         .alternating-headline .stat-display {
@@ -1025,11 +1019,15 @@
             }
 
             .alternating-headline .stat-display {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
 
             .hero-headline-container {
                 min-height: 150px;
+            }
+
+            .hero-section h1 {
+                font-size: 2.5rem;
             }
 
             .expertise-list {
