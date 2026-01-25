@@ -529,6 +529,128 @@
             font-size: 1.2rem;
         }
 
+        /* About Section - Style A (Circular Cards) */
+        .about-section-a {
+            background-color: var(--light-bg);
+        }
+
+        .section-headline-left {
+            text-align: left;
+            font-size: 3rem;
+            font-weight: 400;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            letter-spacing: -1.5px;
+        }
+
+        .results-grid-circular {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .result-card-circular {
+            text-align: center;
+        }
+
+        .metric-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: #B89946;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .metric-value {
+            font-family: 'Gloock', Georgia, serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: var(--primary-color);
+            line-height: 1;
+        }
+
+        .result-card-circular h4 {
+            font-family: 'Gloock', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .result-card-circular p {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* About Section - Style B (Minimal with Dividers) */
+        .about-section-b {
+            background-color: var(--light-bg);
+        }
+
+        .section-headline-left-large {
+            text-align: left;
+            font-size: 3.5rem;
+            font-weight: 400;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+            line-height: 1.1;
+        }
+
+        .results-grid-minimal {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0;
+            border-left: 2px dotted var(--primary-color);
+        }
+
+        .result-card-minimal {
+            padding: 40px 30px;
+            border-right: 2px dotted var(--primary-color);
+            border-bottom: 2px dotted var(--primary-color);
+        }
+
+        .result-card-minimal:nth-child(1),
+        .result-card-minimal:nth-child(2) {
+            border-top: 2px dotted var(--primary-color);
+        }
+
+        .metric-large {
+            font-family: 'Gloock', Georgia, serif;
+            font-size: 5rem;
+            font-weight: 400;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-unit {
+            font-size: 3rem;
+        }
+
+        .result-card-minimal h4 {
+            font-family: 'Gloock', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .result-card-minimal p {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0;
+            line-height: 1.4;
+        }
+
         /* How It Works - Horizontal Timeline */
         .how-it-works {
             background-color: var(--light-bg);
@@ -1161,6 +1283,112 @@
                         <li>Brand development and market positioning</li>
                         <li>Research synthesis and data visualization</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Expertise Section - Style A (Circular Cards) -->
+    <section class="about-section-a fade-in-section" style="display: none;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="section-headline-left">Marketing That Drives Measurable Results</h2>
+
+                    <h3 style="color: var(--primary-color); font-weight: 700; margin-top: 2rem;">Why Clients Choose Me</h3>
+                    <p>Institutional-quality execution, CRE industry fluency, data-driven storytelling, measurable business impact, and efficient delivery timelines that match your transaction schedules.</p>
+
+                    <h3 style="color: var(--primary-color); font-weight: 700; margin-top: 2rem;">Expertise Includes</h3>
+                    <ul class="expertise-list">
+                        <li>Offering memorandums and investment sales materials</li>
+                        <li>Investor pitch decks and fund marketing</li>
+                        <li>Leasing brochures and property marketing campaigns</li>
+                        <li>Portfolio presentations and capabilities decks</li>
+                        <li>Brand development and market positioning</li>
+                        <li>Research synthesis and data visualization</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="results-grid-circular">
+                        <div class="result-card-circular">
+                            <div class="metric-circle">
+                                <div class="metric-value">$1B</div>
+                            </div>
+                            <h4>in Client Investments</h4>
+                            <p>Portfolio growth and capital raised</p>
+                        </div>
+                        <div class="result-card-circular">
+                            <div class="metric-circle">
+                                <div class="metric-value">2M SF</div>
+                            </div>
+                            <h4>Project Lease-Up</h4>
+                            <p>Contra Costa Logistics Center</p>
+                        </div>
+                        <div class="result-card-circular">
+                            <div class="metric-circle">
+                                <div class="metric-value">89%</div>
+                            </div>
+                            <h4>Email Reduction</h4>
+                            <p>Marketing system efficiency</p>
+                        </div>
+                        <div class="result-card-circular">
+                            <div class="metric-circle">
+                                <div class="metric-value">6.2B SF</div>
+                            </div>
+                            <h4>Portfolio Retained</h4>
+                            <p>C&W Services facility clients</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About/Expertise Section - Style B (Minimal with Dividers) -->
+    <section class="about-section-b fade-in-section" style="display: none;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="section-headline-left-large">Marketing That Drives Measurable Results</h2>
+
+                    <h3 style="color: var(--primary-color); font-weight: 700; margin-top: 2rem;">Why Clients Choose Me</h3>
+                    <p>Institutional-quality execution, CRE industry fluency, data-driven storytelling, measurable business impact, and efficient delivery timelines that match your transaction schedules.</p>
+
+                    <h3 style="color: var(--primary-color); font-weight: 700; margin-top: 2rem;">Expertise Includes</h3>
+                    <ul class="expertise-list">
+                        <li>Offering memorandums and investment sales materials</li>
+                        <li>Investor pitch decks and fund marketing</li>
+                        <li>Leasing brochures and property marketing campaigns</li>
+                        <li>Portfolio presentations and capabilities decks</li>
+                        <li>Brand development and market positioning</li>
+                        <li>Research synthesis and data visualization</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="results-grid-minimal">
+                        <div class="result-card-minimal">
+                            <div class="metric-large">$1B</div>
+                            <h4>in Client Investments</h4>
+                            <p>Portfolio growth and capital raised</p>
+                        </div>
+                        <div class="result-card-minimal">
+                            <div class="metric-large">2M <span class="metric-unit">SF</span></div>
+                            <h4>Project Lease-Up</h4>
+                            <p>Contra Costa Logistics Center</p>
+                        </div>
+                        <div class="result-card-minimal">
+                            <div class="metric-large">89%</div>
+                            <h4>Email Reduction</h4>
+                            <p>Marketing system efficiency</p>
+                        </div>
+                        <div class="result-card-minimal">
+                            <div class="metric-large">6.2B <span class="metric-unit">SF</span></div>
+                            <h4>Portfolio Retained</h4>
+                            <p>C&W Services facility clients</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
