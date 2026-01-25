@@ -61,8 +61,8 @@
             font-size: 4rem;
         }
 
-        h2, .section-headline {
-            font-size: 3.2rem;
+        h2 {
+            font-size: 3rem;
         }
 
         /* h3 and below use Poppins with accent color */
@@ -394,11 +394,13 @@
         }
 
         .case-study h2 {
+            font-family: 'Gloock', Georgia, serif;
+            font-size: 3rem;
+            font-weight: 400;
+            letter-spacing: -1.5px;
             color: var(--primary-color);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            font-size: 2.2rem;
-            letter-spacing: -0.5px;
+            line-height: 1.2;
+            margin-bottom: 2rem;
         }
 
         .case-study h3 {
@@ -500,13 +502,17 @@
             z-index: 1;
         }
 
-        .section-headline {
-            text-align: left;
+        .section-headline,
+        .section-headline-left,
+        .section-headline-left-large {
+            font-family: 'Gloock', Georgia, serif;
             font-size: 3rem;
             font-weight: 400;
-            color: var(--primary-color);
-            margin-bottom: 3rem;
             letter-spacing: -1.5px;
+            color: var(--primary-color);
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            text-align: left;
         }
 
         .testimonials .section-headline {
@@ -620,14 +626,6 @@
             padding: 60px 0;
         }
 
-        .section-headline-left {
-            text-align: left;
-            font-size: 3rem;
-            font-weight: 400;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            letter-spacing: -1.5px;
-        }
 
         .results-grid-circular {
             display: grid;
@@ -692,15 +690,6 @@
             background-color: var(--light-bg);
         }
 
-        .section-headline-left-large {
-            text-align: left;
-            font-size: 3.5rem;
-            font-weight: 400;
-            color: var(--primary-color);
-            margin-bottom: 2rem;
-            letter-spacing: -2px;
-            line-height: 1.1;
-        }
 
         .results-grid-minimal {
             display: grid;
@@ -944,10 +933,12 @@
         }
 
         .final-cta h2 {
-            font-size: 2.5rem;
+            font-family: 'Gloock', Georgia, serif;
+            font-size: 3rem;
             font-weight: 400;
-            margin-bottom: 1rem;
-            letter-spacing: 0.5px;
+            letter-spacing: -1.5px;
+            line-height: 1.2;
+            margin-bottom: 2rem;
         }
 
         .final-cta .lead {
@@ -1073,7 +1064,11 @@
                 font-size: 2.5rem;
             }
 
-            h2, .section-headline {
+            h2,
+            .section-headline,
+            .section-headline-left,
+            .section-headline-left-large,
+            .pricing-header {
                 font-size: 2rem;
             }
 
