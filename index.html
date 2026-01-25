@@ -252,6 +252,7 @@
             justify-content: center;
             gap: 12px;
             margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
         }
 
         .indicator-dot {
@@ -259,35 +260,30 @@
             height: 10px;
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
+            transform: scale(1);
         }
 
-        .indicator-dot.active {
-            background-color: #B89946;
-            transform: scale(1.5);
-        }
-
-        .indicator-dot:nth-child(1).active {
+        .indicator-dot:nth-child(1) {
             animation: dotActive 15s infinite;
             animation-delay: 0s;
         }
 
-        .indicator-dot:nth-child(2).active {
+        .indicator-dot:nth-child(2) {
             animation: dotActive 15s infinite;
             animation-delay: 3s;
         }
 
-        .indicator-dot:nth-child(3).active {
+        .indicator-dot:nth-child(3) {
             animation: dotActive 15s infinite;
             animation-delay: 6s;
         }
 
-        .indicator-dot:nth-child(4).active {
+        .indicator-dot:nth-child(4) {
             animation: dotActive 15s infinite;
             animation-delay: 9s;
         }
 
-        .indicator-dot:nth-child(5).active {
+        .indicator-dot:nth-child(5) {
             animation: dotActive 15s infinite;
             animation-delay: 12s;
         }
@@ -372,7 +368,7 @@
 
         /* Case Studies */
         .case-study {
-            padding: 80px 0;
+            padding: 40px 0;
         }
 
         .case-study .container {
@@ -380,7 +376,7 @@
         }
 
         .case-study-content {
-            padding: 40px;
+            padding: 20px;
         }
 
         .case-study img {
@@ -504,12 +500,6 @@
             z-index: 1;
         }
 
-        .testimonials .section-headline {
-            color: white;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-
         .section-headline {
             text-align: left;
             font-size: 3rem;
@@ -517,6 +507,10 @@
             color: var(--primary-color);
             margin-bottom: 3rem;
             letter-spacing: -1.5px;
+        }
+
+        .testimonials .section-headline {
+            color: white;
         }
 
         .testimonial-card,
@@ -1216,11 +1210,11 @@
                         </div>
                     </div>
                     <div class="headline-indicators">
-                        <div class="indicator-dot active"></div>
-                        <div class="indicator-dot active"></div>
-                        <div class="indicator-dot active"></div>
-                        <div class="indicator-dot active"></div>
-                        <div class="indicator-dot active"></div>
+                        <div class="indicator-dot"></div>
+                        <div class="indicator-dot"></div>
+                        <div class="indicator-dot"></div>
+                        <div class="indicator-dot"></div>
+                        <div class="indicator-dot"></div>
                     </div>
                     <p class="lead">CRE brokers and investors use my marketing to lease properties 7.5x faster, raise capital, and generate millions in commissions. From offering memorandums to investor decks, I transform property data into institutional-quality materials that accelerate decisions.</p>
                     <div class="d-flex gap-3 flex-wrap justify-content-center">
@@ -1307,7 +1301,7 @@
     <!-- Testimonials Section -->
     <section class="testimonials fade-in-section">
         <div class="container">
-            <h2 class="section-headline" style="color: white;">What Happens When You Work With Me</h2>
+            <h2 class="section-headline">What Happens When You Work With Me</h2>
 
             <div class="row">
                 <div class="col-lg-6">
