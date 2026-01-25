@@ -255,13 +255,29 @@
         }
 
         /* Case Studies */
+        .case-study {
+            overflow: hidden;
+            padding: 0 !important;
+        }
+
+        .case-study .container {
+            max-width: 100%;
+            padding: 0;
+        }
+
         .case-study .row {
-            min-height: 500px;
+            margin: 0;
+            min-height: 600px;
         }
 
         .case-study .col-lg-6 {
+            padding: 0;
             display: flex;
             flex-direction: column;
+        }
+
+        .case-study-content {
+            padding: 80px 60px !important;
         }
 
         .case-study:nth-child(even) {
@@ -292,15 +308,16 @@
         .case-study-image {
             border-radius: 0;
             position: relative;
-            flex: 1;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
-            min-height: 500px;
         }
 
         .case-study-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             display: block;
         }
 
@@ -875,6 +892,18 @@
             .pricing-header {
                 font-size: 2rem;
             }
+
+            .case-study .row {
+                min-height: auto;
+            }
+
+            .case-study-content {
+                padding: 40px 20px !important;
+            }
+
+            .case-study-image {
+                min-height: 300px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -975,12 +1004,12 @@
     <section class="case-study fade-in-section" id="results">
         <div class="container">
             <div class="row align-items-start">
-                <div class="col-lg-6 mb-4 mb-lg-0">
+                <div class="col-lg-6">
                     <div class="case-study-image">
-                        <img src="marketing1.webp" alt="Contra Costa Logistics Center">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=2000" alt="Contra Costa Logistics Center">
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 case-study-content">
                     <h2>Secured Amazon as Anchor Tenant Pre-Construction</h2>
                     <p class="text-muted mb-3">Case Study: Contra Costa Logistics Center</p>
 
@@ -1011,12 +1040,12 @@
     <section class="case-study fade-in-section">
         <div class="container">
             <div class="row align-items-start">
-                <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+                <div class="col-lg-6 order-lg-2">
                     <div class="case-study-image">
-                        <img src="research.webp" alt="Martinez Research Brochure">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2000" alt="Martinez Research Brochure">
                     </div>
                 </div>
-                <div class="col-lg-6 order-lg-1">
+                <div class="col-lg-6 order-lg-1 case-study-content">
                     <h2>Research-Driven Brochure Generated Multiple Property Sales</h2>
                     <p class="text-muted mb-3">Case Study: Martinez: What's Next</p>
 
