@@ -175,53 +175,82 @@
             position: relative;
         }
 
-        /* Sliding headline animation */
-        .hero-stats-container {
+        /* Alternating headline animation */
+        .hero-headline-container {
             position: relative;
             margin-bottom: 2rem;
-            min-height: 80px;
-        }
-
-        .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            opacity: 1;
-        }
-
-        .hero-stat {
+            min-height: 140px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-size: 0.95rem;
-            line-height: 1.4;
+            justify-content: center;
         }
 
-        .hero-stat i {
-            color: #B89946;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .sliding-headline {
+        .alternating-headline {
             position: absolute;
-            top: 0;
+            top: 50%;
             left: 0;
             right: 0;
-            background: linear-gradient(135deg, rgba(0, 1, 81, 0.95) 0%, rgba(26, 43, 107, 0.95) 100%);
-            padding: 10px 0;
-            animation: slideReveal 2s ease-in-out 1s forwards;
-            z-index: 2;
+            transform: translateY(-50%);
+            opacity: 0;
+            animation: fadeInOut 15s infinite;
         }
 
-        @keyframes slideReveal {
+        .alternating-headline:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .alternating-headline:nth-child(2) {
+            animation-delay: 3s;
+        }
+
+        .alternating-headline:nth-child(3) {
+            animation-delay: 6s;
+        }
+
+        .alternating-headline:nth-child(4) {
+            animation-delay: 9s;
+        }
+
+        .alternating-headline:nth-child(5) {
+            animation-delay: 12s;
+        }
+
+        @keyframes fadeInOut {
             0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
                 opacity: 0;
             }
+            2% {
+                opacity: 1;
+            }
+            18% {
+                opacity: 1;
+            }
+            20% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .alternating-headline h1 {
+            margin: 0;
+        }
+
+        .alternating-headline .stat-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-size: 2.5rem;
+            font-family: 'Gloock', Georgia, serif;
+            font-weight: 400;
+            letter-spacing: -1px;
+        }
+
+        .alternating-headline .stat-display i {
+            color: #B89946;
+            font-size: 2.5rem;
         }
 
         .hero-section .lead {
@@ -996,13 +1025,14 @@
                 font-size: 1.1rem;
             }
 
-            .hero-stats {
-                grid-template-columns: 1fr;
-                gap: 15px;
+            .alternating-headline .stat-display {
+                font-size: 1.5rem;
+                flex-direction: column;
+                gap: 10px;
             }
 
-            .hero-stat {
-                font-size: 0.9rem;
+            .alternating-headline .stat-display i {
+                font-size: 2rem;
             }
 
             .expertise-list {
@@ -1104,27 +1134,33 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10 hero-content text-center">
-                    <div class="hero-stats-container">
-                        <div class="hero-stats">
-                            <div class="hero-stat">
+                    <div class="hero-headline-container">
+                        <div class="alternating-headline">
+                            <h1>Close Deals Faster With Marketing That Converts</h1>
+                        </div>
+                        <div class="alternating-headline">
+                            <div class="stat-display">
                                 <i class="bi bi-trophy-fill"></i>
                                 <span>2023 SIOR Award Winner</span>
                             </div>
-                            <div class="hero-stat">
+                        </div>
+                        <div class="alternating-headline">
+                            <div class="stat-display">
                                 <i class="bi bi-currency-dollar"></i>
                                 <span>$10M+ Client Commissions Generated</span>
                             </div>
-                            <div class="hero-stat">
+                        </div>
+                        <div class="alternating-headline">
+                            <div class="stat-display">
                                 <i class="bi bi-graph-up-arrow"></i>
                                 <span>7.5x Faster Lease-Up</span>
                             </div>
-                            <div class="hero-stat">
+                        </div>
+                        <div class="alternating-headline">
+                            <div class="stat-display">
                                 <i class="bi bi-people-fill"></i>
                                 <span>Trusted by CBRE, JLL, C&W, Marcus & Millichap</span>
                             </div>
-                        </div>
-                        <div class="sliding-headline">
-                            <h1>Close Deals Faster With Marketing That Converts</h1>
                         </div>
                     </div>
                     <p class="lead">CRE brokers and investors use my marketing to lease properties 7.5x faster, raise capital, and generate millions in commissions. From offering memorandums to investor decks, I transform property data into institutional-quality materials that accelerate decisions.</p>
