@@ -653,7 +653,7 @@
         .results-grid-circular {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
+            gap: 40px 0px;
             padding: 0px;
         }
 
@@ -669,9 +669,10 @@
 
         .metric-circle {
             position: absolute;
-            left: 0px;
-            width: 200px;
-            height: 200px;
+            left: 15px;
+            top: 15px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             background-color: #B89946;
             z-index: 0;
@@ -685,7 +686,7 @@
             line-height: 1;
             position: relative;
             z-index: 1;
-            margin-top: 4rem;
+            margin-top: 15px;
         }
 
         .result-card-circular h4 {
@@ -697,12 +698,13 @@
             line-height: 1.1;
             position: relative;
             z-index: 1;
+            max-width: 150px;
         }
 
         .result-card-circular p {
             color: #333;
             font-size: 1rem;
-            margin: 0;
+            margin: 15px 0 0 0;
             line-height: 1.5;
             position: relative;
             z-index: 1;
@@ -1353,7 +1355,7 @@
     <section class="about-section-a fade-in-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-7">
                     <h2 class="section-headline-left">Marketing That Drives Measurable Results</h2>
 
                     <h3 style="margin-top: 2rem;">Why Clients Choose Me</h3>
@@ -1370,7 +1372,7 @@
                     </ul>
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-5">
                     <div class="results-grid-circular">
                         <div class="result-card-circular">
                             <div class="metric-circle"></div>
